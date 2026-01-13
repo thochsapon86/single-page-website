@@ -116,9 +116,9 @@
         </div>
         <div id="filter" class="flex flex-wrap gap-2 justify-start md:justify-end">
           <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer visited:bg-blue-500 active:text-white" data-tag="all">All</button>
-          <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="website">Website</button>
-          <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="data">Data</button>
-          <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="iot">IoT</button>
+          <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="Website">Website</button>
+          <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="Data">Data</button>
+          <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="IoT">IoT</button>
         </div>
       </div>
     <!-- =========================
@@ -256,8 +256,10 @@
       // ข้อมูลโปรเจค (Mock data)
       // ============================
       const projects = [
-        { id:1, title: 'Landing Page', tag:'Web', desc:'หน้าเว็บไซต์แบบหน้าเดียว เพื่อเป็น landing page สำหรับรับงาน responsive'},
-        { id:2, title:'GoMath', tag:'Web', desc:'ว็บไซต์เรียนรู้สำหรับวิชาคณิตศาสตร์คอมพิวเตอร์ออนไลน์สามารถเรียนได้ตลอด ทุกที่ ทุกเวลา responsive ลิงก์เว็บ https://website-project-equk.onrender.com'}
+        { id:1, title: 'Landing Page', tag:'Website', desc:'หน้าเว็บไซต์แบบหน้าเดียว เพื่อเป็น landing page สำหรับรับงาน responsive'},
+        { id:2, title:'GoMath', tag:'Website', desc:'ว็บไซต์เรียนรู้สำหรับวิชาคณิตศาสตร์คอมพิวเตอร์ออนไลน์สามารถเรียนได้ตลอด ทุกที่ ทุกเวลา responsive ลิงก์เว็บ https://website-project-equk.onrender.com'},
+        { id:3, title: 'IoT project test', tag:'IoT', desc:'ทดสอบ card'},
+        { id:4, title: 'Data project test', tag:'Data', desc:'ทดสอบ card'}
       ]
       // ----------------------------
       // 2) เลือก DOM elements
