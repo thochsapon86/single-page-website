@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="th">
+  <!-- =========================
+  ส่วน head
+  - กำหนด charset และ viewport สำหรับ responsive design
+  - เรียกใช้ Tailwind CSS ผ่าน CDN
+  - ตั้งค่า font Kanit สำหรับทั้งเว็บไซต์
+========================== -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,15 +19,24 @@
         }
     </style>
   </head>
-  <body class="bg-slate-100 h-svw">
-    <!-- Navbar ส่วนนำทาง -->
+  <body class="bg-slate-100">
+  <!-- =========================
+    Navbar (แถบนำทาง)
+    - แสดงเมนูหลักของเว็บไซต์
+    - ใช้ position: sticky เพื่อให้แถบเมนูติดอยู่ด้านบนขณะเลื่อนหน้า
+    - รองรับ responsive (เรียงแนวตั้งบนมือถือ และแนวนอนบน desktop)
+  ========================== -->
     <nav
-      class="justify-between flex mx-auto px-8 py-4 shadow-md bg-white sticky  top-0 z-1"
+      class="flex flex-col md:flex-row 
+      md:justify-between 
+      gap-4 
+      mx-auto px-4 md:px-8 py-4 
+      shadow-md bg-white sticky top-0 z-10"
     >
       <div class="font-bold text-lg">
         <a href="./index.html">9Nick<span class="text-blue-500">Dev</span></a>
       </div>
-      <ul class="flex gap-x-4">
+      <ul class="flex flex-col md:flex-row gap-2 md:gap-x-4">
         <li>
           <a href="#Biography" class="hover:border-b-2 border-slate-300">ประวัติส่วนตัว</a>
         </li>
@@ -36,101 +51,103 @@
         </li>
       </ul>
     </nav>
-    <!-- Header ส่วนหัว -->
+    <!-- =========================
+      Header (ส่วนหัวเว็บไซต์)
+      - แสดงภาพพื้นหลังและข้อความแนะนำเว็บไซต์
+      - ใช้ absolute positioning เพื่อซ้อนข้อความบนรูปภาพ
+      - ปรับขนาดตัวอักษรตามขนาดหน้าจอ (responsive)
+    ========================== -->
     <header class="w-full mx-auto content-center text-center">
       <div class="relative">
         <img src="./images/header_img.jpg" alt="" class="w-full h-120 object-cover brightness-20 object-top">
-        <div class="absolute top-30 inset-0 ">
-          <h1 class="text-6xl text-white">
+        <div class="absolute inset-0 flex flex-col items-center justify-center space-y-6">
+          <h1 class="text-3xl md:text-6xl text-white text-center px-4">
             ต้องการสร้าง <br /><span class="text-blue-500">เว็บไซต์?</span>
           </h1>
-          <p class="text-lg my-4 text-white">
+          <p class="text-base md:text-lg text-white px-6 text-center">
             <span class="text-3xl">9Nick<span class="text-blue-500">Dev</span></span> คือเว็บไซต์รับงาน freelance สำหรับพัฒนาเว็บไซต์เพื่อหารายได้เสริมระหว่างเรียน
           </p>
-          <button
-            class="mt-2 py-2 px-4 bg-blue-500 text-white rounded-full hover:bg-blue-700 cursor-pointer text-lg transition delay-30"
+          <a href="#ContactForm"
+            class="py-2 px-4 bg-blue-500 text-white rounded-full hover:bg-blue-700 cursor-pointer text-lg transition delay-30"
           >
           แบบฟอร์มติดต่อกลับ
-          </button>
+          </a>
       </div>
     </header>
-    <!-- Biography ส่วนประวัติส่วนตัว-->
+    <!-- =========================
+      Biography (ประวัติส่วนตัว)
+      - แสดงข้อมูลส่วนตัวของผู้พัฒนาเว็บไซต์
+      - ประกอบด้วยรูปโปรไฟล์ ชื่อ และคำอธิบายสั้น ๆ
+      - จัดวางเป็น Card และอยู่กึ่งกลางหน้าจอ
+    ========================== -->
     <section id="Biography">
-      <div class="mx-auto md:w-2xs md:h-109 mt-20 border-blue-500 border-2 rounded-2xl px-2 py-4 shadow-lg/30 gap-2 text-center justify-items-center bg-white">
-        <img src="./images/profile.jpg" alt="" class="mt-3 w-38 h-38 object-cover rounded-full object-top">
+      <div class="mx-auto
+      w-full max-w-[280px]
+      mt-20
+      border-blue-500 border-2
+      rounded-2xl
+      px-6 py-8
+      shadow-lg
+      bg-white
+      text-center">
+        <img src="./images/profile.jpg" alt="" class="mt-3 w-38 h-38 object-cover rounded-full object-top mx-auto">
         <div>
           <h1 class="mt-3 text-2xl">นาย ทัศน์พล ชัยยันต์</h1>
           <p class="mt-3 px-4 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ullam officia voluptatum illo illum commodi modi distinctio, ipsa cum. Amet quia consectetur quibusdam eveniet nam.</p>
         </div>
-        <ul class="grid md:grid-cols-3 mt-4 gap-1 items-center">
+        <ul class="flex justify-center gap-4 mt-5">
           <li class="w-fit h-fit"><a href="https://www.facebook.com/NickzTatsapon" target="_blank"><img src="./images/fb_logo.png" alt="" width="36px" height="36px"></a></li>
           <li class="w-fit h-fit"><a href="https://www.instagram.com/ya.nickz/" target="_blank"><img src="./images/ig_logo.png" alt="" width="36px" height="36px"></a></li>
           <li class="w-fit h-fit"><a href="https://github.com/thochsapon86" target="_blank"><img src="./images/github_logo.png" alt="" width="36px" height="36px"></a></li>
         </ul>
        </div>
     </section>
-    <!-- Portfolio ผลงานที่ผ่านมา-->
-    <section id="Portfolio" class="mt-20 mx-auto w-7xl">
+    <!-- =========================
+      Portfolio (ผลงานที่ผ่านมา)
+      - แสดงรายการผลงานในรูปแบบ Card
+      - สามารถกรองผลงานตามหมวดหมู่ (Filter)
+      - ใช้ JavaScript ในการ render ข้อมูลแบบ dynamic
+    ========================== -->
+    <section id="Portfolio" class="mt-20 mx-auto max-w-7xl px-4">
       <div class="flex justify-between items-end">
         <div class="">
             <h1 class="text-4xl font-bold">ผลงาน</h1>
             <p class="text-slate-400">กด filter เพื่อดูงานเฉพาะหมวด</p>
         </div>
-        <div id="filter" class="flex gap-2">
+        <div id="filter" class="flex flex-wrap gap-2 justify-start md:justify-end">
           <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer visited:bg-blue-500 active:text-white" data-tag="all">All</button>
           <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="website">Website</button>
           <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="data">Data</button>
           <button class="filter-btn px-4 py-2 rounded-full border bg-white hover:bg-blue-500 hover:text-white text-sm cursor-pointer" data-tag="iot">IoT</button>
         </div>
       </div>
-      <!-- Project cards -->
-      <div class="mt-5 grid md:grid-cols-3 gap-4 flex flex-wrap content-center">
-        <button class="bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition">
+    <!-- =========================
+      Project Grid
+      - พื้นที่แสดง Card ของแต่ละโปรเจกต์
+      - ใช้ CSS Grid เพื่อรองรับ responsive design
+    ========================== -->
+      <div id="projectGrid" class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- <button class="bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition">
           <h3 class="text-blue-500 text-sm">Website</h3>
           <h2 class="text-lg mt-1 font-bold">Landing Page</h2>
           <p class="text-slate-500 text-sm  mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, reprehenderit?</p>
           <div class="text-sm font-semibold text-slate-900 mt-5">View detail →</div>
-        </button>
-        <button class="bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition">
-          <h3 class="text-blue-500 text-sm">Website</h3>
-          <h2 class="text-lg mt-1 font-bold">Landing Page</h2>
-          <p class="text-slate-500 text-sm  mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, reprehenderit?</p>
-          <div class="text-sm font-semibold text-slate-900 mt-5">View detail →</div>
-        </button>
-        <button class="bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition">
-          <h3 class="text-blue-500 text-sm">Website</h3>
-          <h2 class="text-lg mt-1 font-bold">Landing Page</h2>
-          <p class="text-slate-500 text-sm  mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, reprehenderit?</p>
-          <div class="text-sm font-semibold text-slate-900 mt-5">View detail →</div>
-        </button>
-        <button class="bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition">
-          <h3 class="text-blue-500 text-sm">Website</h3>
-          <h2 class="text-lg mt-1 font-bold">Landing Page</h2>
-          <p class="text-slate-500 text-sm  mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, reprehenderit?</p>
-          <div class="text-sm font-semibold text-slate-900 mt-5">View detail →</div>
-        </button>
-        <button class="bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition">
-          <h3 class="text-blue-500 text-sm">Website</h3>
-          <h2 class="text-lg mt-1 font-bold">Landing Page</h2>
-          <p class="text-slate-500 text-sm  mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, reprehenderit?</p>
-          <div class="text-sm font-semibold text-slate-900 mt-5">View detail →</div>
-        </button>
-        <button class="bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition">
-          <h3 class="text-blue-500 text-sm">Website</h3>
-          <h2 class="text-lg mt-1 font-bold">Landing Page</h2>
-          <p class="text-slate-500 text-sm  mt-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, reprehenderit?</p>
-          <div class="text-sm font-semibold text-slate-900 mt-5">View detail →</div>
-        </button>
+        </button> -->
       </div>
     </section>
-    <!-- Contact ช่องทางการติดต่อ -->
-    <section id="Contact" class="mt-20 mx-auto w-7xl">
+    <!-- =========================
+      Contact (ช่องทางการติดต่อ)
+      - แสดงข้อมูลการติดต่อ เช่น เบอร์โทร อีเมล และที่อยู่
+      - จัดแสดงในรูปแบบ Card
+      - รองรับการแสดงผลทั้งมือถือและ desktop
+    ========================== -->
+    <section id="Contact" class="mt-20 mx-auto max-w-7xl px-4">
       <div>
         <h1 class="text-4xl font-bold text-center">ช่องทางการติดต่อ</h1>
         <p class="text-md text-slate-500 text-center mt-1">Contacts</p>
       </div>
       <!-- Contact Cards -->
-      <div class="mt-8 grid grid-cols-3 gap-5 w-6xl mx-auto">
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
         <div class="rounded-2xl shadow-sm py-4 px-5 bg-white border-slate-700 grid grid-cols-[auto_1fr] gap-6">
           <img src="./images/phone_icon.png" alt="" width="46" height="46" class="justify-self-center self-center">
           <div class="self-center">
@@ -154,39 +171,260 @@
         </div>
       </div>
     </section>
-    <!-- Contact Form แบบฟอร์มติดต่อกลับ-->
-    <section id="ContactForm" class="mt-20 mx-auto w-6xl">
+    <!-- =========================
+      Contact Form (แบบฟอร์มติดต่อกลับ)
+      - แบบฟอร์มสำหรับให้ผู้ใช้กรอกข้อมูลติดต่อ
+      - มีการตรวจสอบความถูกต้องของข้อมูล (Form Validation)
+      - แสดงข้อความแจ้งเตือนเมื่อกรอกข้อมูลไม่ถูกต้อง
+    ========================== -->
+    <section id="ContactForm" class="mt-20 mx-auto max-w-6xl px-4">
       <div class="bg-white py-8 px-10 shadow-md rounded-2xl">
         <h1 class="text-2xl font-bold">แบบฟอร์มติดต่อกลับ</h1>
-        <form action="" class="">
-          <div class="mt-5 grid grid-cols-2 gap-3 items-center">
+        <form id="contactForm">
+          <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <label for="" class="text-lg">ชื่อ</label>
-              <input type="text" required class="border-2 border-slate-300 rounded-md mt-1 w-full py-1 px-3">
+              <input id="nameInput" type="text" class="border-2 border-slate-300 rounded-md mt-1 w-full py-1 px-3" placeholder="กรุณาใส่ชื่อของคุณ">
+              <p id="nameErr"></p>
             </div>
             <div>
               <label for="" class="text-lg">อีเมล</label>
-              <input type="email" required class="border-2 border-slate-300 rounded-md mt-1 w-full py-1 px-3">
+              <input id="emailInput" type="email" class="border-2 border-slate-300 rounded-md mt-1 w-full py-1 px-3" placeholder="กรุณาใส่อีเมลของคุณ">
+              <p id="emailErr"></p>
             </div>
           </div>
           <div class="mt-3">
             <label for="" class="text-lg">ข้อความ</label>
-            <textarea name="" id="" cols="30" rows="10" class="mt-1 border-2 border-slate-300 rounded-md w-full" required></textarea>
+            <textarea name="" id="msgInput" cols="30" rows="10" class="mt-1 border-2 border-slate-300 rounded-md w-full py-1 px-3" placeholder="ลองพิมพ์ข้อความของคุณสิ..."></textarea>
+            <p id="msgErr"></p>
           </div>
           <div class="mt-3">
             <button type="submit" class="bg-blue-500 py-2 px-4 rounded-lg text-white hover:cursor-pointer hover:bg-blue-700 transition">ส่งฟอร์ม</button>
+            <p id="formStatus" class="mt-2"></p>
           </div>
         </form>
       </div>
     </section>
-    <!-- Footer ส่วนท้าย -->
+    <!-- =========================
+      Footer (ส่วนท้ายเว็บไซต์)
+      - แสดงข้อมูลลิขสิทธิ์ของเว็บไซต์
+    ========================== -->
     <section id="Footer" class="mt-3">
       <p class="text-slate-500 text-center text-sm py-5">&copy;2026 Landing Page Demo</p>
     </section>
-
-    <!-- Script ต่างๆ -->
+    <!-- =========================
+      Modal
+      - ใช้แสดงรายละเอียดของผลงานเมื่อผู้ใช้คลิกที่ Card
+      - สามารถปิดได้โดยกดปุ่มหรือคลิกที่พื้นหลัง
+    ========================== -->
+    <div id="modal"
+    class="fixed inset-0  items-center justify-center p-4 bg-black/40 hidden"
+    role="dialog"
+    aria-modal="true"
+    >
+    <div class="w-full max-w-lg bg-white rounded-2xl shadow-lg border p-6">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <h3 id="modalTitle" class="text-xl font-extrabold">Title</h3>
+          <p id="modalTag" class="mt-1 text-sm text-slate-600">tag</p>
+        </div>
+ 
+        <button id="btnCloseModal" class="px-3 py-1 rounded-lg border hover:bg-slate-50 hover:cursor-pointer">
+          ✕
+        </button>
+      </div>
+ 
+      <p id="modalDesc" class="mt-4 text-slate-700"></p>
+ 
+      <div class="mt-6 flex justify-end">
+        <button id="btnOk" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 cursor-pointer">
+          OK
+        </button>
+      </div>
+    </div>
+    </div>
+    <!-- =========================
+      JavaScript
+      - จัดการข้อมูลผลงาน (Mock Data)
+      - แสดงผล Project Card แบบ dynamic
+      - ระบบ Filter ผลงาน
+      - ควบคุม Modal
+      - ตรวจสอบข้อมูลใน Contact Form
+    ========================== -->
     <script>
+      // ============================
+      // ข้อมูลโปรเจค (Mock data)
+      // ============================
+      const projects = [
+        { id:1, title: 'Landing Page', tag:'Web', desc:'หน้าเว็บไซต์แบบหน้าเดียว เพื่อเป็น landing page สำหรับรับงาน responsive'}
+      ]
+      // ----------------------------
+      // 2) เลือก DOM elements
+      // ----------------------------
+      const projectGrid = document.querySelector('#projectGrid')
+      const filterBtns = document.querySelectorAll('.filter-btn')
 
+      const modal = document.querySelector('#modal')
+      const modalTitle = document.querySelector('#modalTitle')
+      const modalTag = document.querySelector('#modalTag')
+      const modalDesc = document.querySelector('#modalDesc')
+      const btnCloseModal = document.querySelector('#btnCloseModal')
+      const btnOk = document.querySelector('#btnOk')
+
+      const contactForm = document.querySelector('#contactForm')
+      const nameInput = document.querySelector('#nameInput')
+      const emailInput = document.querySelector('#emailInput')
+      const msgInput = document.querySelector('#msgInput')
+
+      const nameErr = document.querySelector('#nameErr');
+      const emailErr = document.querySelector('#emailErr');
+      const msgErr = document.querySelector('#msgErr');
+      const formStatus = document.querySelector('#formStatus');
+
+      // ----------------------------
+      // 3) ฟังก์ชัน render projects
+      // ----------------------------
+      function renderProjects(tag) {
+        // filter ตาม tag
+        const list = tag === 'all'
+        ? projects
+        : projects.filter((p) => p.tag === tag );
+
+        // สร้าง HTML string
+        // จุดสำคัญ: ใส่ data-id เพื่อให้รู้ว่าการ์ดนี้คือโปรเจ็คไหน
+        projectGrid.innerHTML = list.map(p => `
+          <button
+            class="project-card bg-white py-4 px-5 rounded-2xl border-slate-700 shadow-sm w-sm text-left hover:cursor-pointer hover:shadow-lg transition"
+            data-id="${p.id}"
+          >
+            <h3 class="text-blue-500 text-sm">${p.tag}</h3>
+            <h2 class="text-lg mt-1 font-bold">${p.title}</h2>
+            <p class="text-slate-500 text-sm mt-1">${p.desc}</p>
+            <div class="text-sm font-semibold text-slate-900 mt-5">
+              View detail →
+            </div>
+          </button>
+      `).join('');
+        // หลัง render แล้ว ต้อง “ผูก event” ใหม่กับการ์ดที่เพิ่งถูกสร้าง
+        bindProjectCardEvents();
+      }
+
+      // ----------------------------
+      // 4) ผูก event ให้ cards (เปิด modal)
+      // ----------------------------
+      function bindProjectCardEvents() {
+      const cards = document.querySelectorAll('.project-card');
+ 
+        cards.forEach((card) => {
+          card.addEventListener('click', () => {
+            const id = Number(card.dataset.id);
+            const proj = projects.find((p) => p.id === id);
+  
+            // ใส่ข้อมูลลง modal
+            modalTitle.textContent = proj.title;
+            modalTag.textContent = `Category: ${proj.tag}`;
+            modalDesc.textContent = proj.desc;
+  
+            // โชว์ modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+          });
+        });
+      }
+
+      function closeModal() {
+      // ซ่อน modal
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+      // ----------------------------
+      // 5) Filter buttons
+      // ----------------------------
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const tag = btn.dataset.tag;
+  
+          // highlight ปุ่มที่ active
+          filterBtns.forEach(b => {
+          b.classList.remove('bg-blue-500', 'text-white');
+          b.classList.add('bg-white');
+          });
+
+          btn.classList.remove('bg-white');
+          btn.classList.add('bg-blue-500', 'text-white');
+  
+          // render list ใหม่
+          renderProjects(tag);
+        });
+      });
+      // ----------------------------
+      // 6) Modal close events
+      // ----------------------------
+      btnCloseModal.addEventListener('click', closeModal);
+      btnOk.addEventListener('click', closeModal);
+  
+      // คลิกพื้นหลัง (overlay) ให้ปิดได้
+      modal.addEventListener('click', (e) => {
+        // ถ้าคลิกที่ overlay จริง ๆ (ไม่ใช่กล่องข้างใน) ให้ปิด
+        if (e.target === modal) closeModal();
+      });
+
+      // ----------------------------
+      // 8) Form validate
+      // ----------------------------
+
+      function validEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+      contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const msg = msgInput.value.trim();
+
+      nameErr.textContent = '';
+      emailErr.textContent = '';
+      msgErr.textContent = '';
+      formStatus.textContent = '';
+
+      let ok = true;
+
+      if (name.length < 2) {
+        nameErr.textContent = 'ชื่อควรมีอย่างน้อย 2 ตัวอักษร';
+        nameErr.className = 'mt-1 text-sm text-red-600';
+        ok = false;
+      }
+
+      if (!validEmail(email)) {
+        emailErr.textContent = 'อีเมลไม่ถูกต้อง';
+        emailErr.className = 'mt-1 text-sm text-red-600';
+        ok = false;
+      }
+
+      if (msg.length < 5) {
+        msgErr.textContent = 'ข้อความควรมีอย่างน้อย 5 ตัวอักษร';
+        msgErr.className = 'mt-1 text-sm text-red-600';
+        ok = false;
+      }
+
+      if (!ok) return;
+
+      formStatus.textContent = 'ส่งข้อความแล้ว (เดโม) ✅';
+      formStatus.className = 'mt-2 text-sm text-green-600';
+
+      nameInput.value = '';
+      emailInput.value = '';
+      msgInput.value = '';
+    });
+
+      // ----------------------------
+      // เริ่มต้น: render all
+      // ----------------------------
+      renderProjects('all');
+      // ตั้งค่าให้ปุ่ม All เป็น active ตั้งแต่แรก
+      filterBtns[0].classList.remove('bg-white');
+      filterBtns[0].classList.add('bg-blue-500', 'text-white');
     </script>
   </body>
 </html>
