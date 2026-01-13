@@ -18,6 +18,12 @@
             font-family: "Kanit", sans-serif;
         }
     </style>
+  <!-- =========================
+      ติดตั้งตัว AOS
+      - Library ของ AOS Animate On Scroll Library
+  ========================== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body class="bg-slate-100">
   <!-- =========================
@@ -57,7 +63,7 @@
       - ใช้ absolute positioning เพื่อซ้อนข้อความบนรูปภาพ
       - ปรับขนาดตัวอักษรตามขนาดหน้าจอ (responsive)
     ========================== -->
-    <header class="w-full mx-auto content-center text-center">
+    <header data-aos="fade-up" class="w-full mx-auto content-center text-center">
       <div class="relative">
         <img src="./images/header_img.jpg" alt="" class="w-full h-120 object-cover brightness-20 object-top">
         <div class="absolute inset-0 flex flex-col items-center justify-center space-y-6">
@@ -80,7 +86,7 @@
       - ประกอบด้วยรูปโปรไฟล์ ชื่อ และคำอธิบายสั้น ๆ
       - จัดวางเป็น Card และอยู่กึ่งกลางหน้าจอ
     ========================== -->
-    <section id="Biography">
+    <section data-aos="fade-up" id="Biography">
       <div class="mx-auto
       w-full max-w-[280px]
       mt-20
@@ -108,7 +114,7 @@
       - สามารถกรองผลงานตามหมวดหมู่ (Filter)
       - ใช้ JavaScript ในการ render ข้อมูลแบบ dynamic
     ========================== -->
-    <section id="Portfolio" class="mt-20 mx-auto max-w-7xl px-4">
+    <section data-aos="fade-up" id="Portfolio" class="mt-20 mx-auto max-w-7xl px-4">
       <div class="flex justify-between items-end">
         <div class="">
             <h1 class="text-4xl font-bold">ผลงาน</h1>
@@ -141,7 +147,7 @@
       - จัดแสดงในรูปแบบ Card
       - รองรับการแสดงผลทั้งมือถือและ desktop
     ========================== -->
-    <section id="Contact" class="mt-20 mx-auto max-w-7xl px-4">
+    <section data-aos="fade-up" id="Contact" class="mt-20 mx-auto max-w-7xl px-4">
       <div>
         <h1 class="text-4xl font-bold text-center">ช่องทางการติดต่อ</h1>
         <p class="text-md text-slate-500 text-center mt-1">Contacts</p>
@@ -177,7 +183,7 @@
       - มีการตรวจสอบความถูกต้องของข้อมูล (Form Validation)
       - แสดงข้อความแจ้งเตือนเมื่อกรอกข้อมูลไม่ถูกต้อง
     ========================== -->
-    <section id="ContactForm" class="mt-20 mx-auto max-w-6xl px-4">
+    <section data-aos="fade-up" id="ContactForm" class="mt-20 mx-auto max-w-6xl px-4">
       <div class="bg-white py-8 px-10 shadow-md rounded-2xl">
         <h1 class="text-2xl font-bold">แบบฟอร์มติดต่อกลับ</h1>
         <form id="contactForm">
@@ -428,6 +434,13 @@
       // ตั้งค่าให้ปุ่ม All เป็น active ตั้งแต่แรก
       filterBtns[0].classList.remove('bg-white');
       filterBtns[0].classList.add('bg-blue-500', 'text-white');
+    </script>
+    <!-- =========================
+      JavaScript
+      - Library ของ AOS Animate On Scroll Library
+    ========================== -->
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
